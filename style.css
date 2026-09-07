@@ -1,24 +1,21 @@
 body {
   margin: 0;
-  padding: 4rem 2.5rem;
-  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  padding: 3.5rem 2.5rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 17px;
-  line-height: 1.6;
-  color: #1a1a1a;
-  background: #fbfaf7;
+  line-height: 1.55;
+  color: #111;
+  background: #fff;
 }
 
 main {
-  max-width: 34rem;
-  margin: 0 auto;
+  max-width: 35rem;
 }
 
 h1 {
-  font-size: 1.15rem;
-  font-weight: normal;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  margin: 0 0 1.75rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 0 1.5rem;
 }
 
 p {
@@ -28,12 +25,8 @@ p {
 a {
   color: inherit;
   text-decoration: underline;
-  text-decoration-color: #999;
   text-underline-offset: 3px;
-}
-
-a:hover {
-  text-decoration-color: #1a1a1a;
+  text-decoration-thickness: 1px;
 }
 
 .links a {
@@ -41,14 +34,14 @@ a:hover {
 }
 
 footer {
-  margin-top: 2.5rem;
-  font-size: 0.85rem;
-  color: #777;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #666;
 }
 
 @media (max-width: 600px) {
   body {
-    padding: 2.5rem 1.25rem;
+    padding: 2rem 1.25rem;
     font-size: 16px;
   }
 }
