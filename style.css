@@ -47,17 +47,35 @@ a.plain {
   color: #666;
 }
 
-article h2 {
-  font-size: 1.05rem;
-  font-weight: bold;
-  margin: 2rem 0 1rem;
+.crumbs {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 2rem;
 }
 
-article h3 {
+.crumbs a {
+  text-decoration: none;
+}
+
+.article h1 {
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.article h2 {
   font-size: 1rem;
-  font-weight: normal;
-  font-style: italic;
-  margin: 1.5rem 0 0.5rem;
+  font-weight: bold;
+  margin: 2rem 0 0.6rem;
+}
+
+.article ol,
+.article ul {
+  padding-left: 1.25rem;
+  margin: 0 0 1.25rem;
+}
+
+.article li {
+  margin-bottom: 0.75rem;
 }
 
 .tag {
