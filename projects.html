@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — Mert Turna</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1><a href="/" class="plain">Mert Turna</a></h1>
+
+    <p class="muted">Projects and writing. Active work is marked as such.</p>
+
+    <article>
+      <h2>Outcome-Conditioned PASTE for LLM-Based Agents <span class="tag">active research</span></h2>
+
+      <h3>Research question</h3>
+      <p>Can we infer what a request should ultimately accomplish, then use that endpoint to predict tool calls more accurately than PASTE or experience-based retrieval?</p>
+
+      <h3>Background and motivation</h3>
+      <p>The initial motivation for speculative tool calling, and later PASTE and B-PASTE, is to make tool execution more efficient by predicting tool executions in token streams before models emit the necessary call. As Li et al. (2026) demonstrate in <em>Speculate with Memory</em>, incorporating historical trajectories through spaced retrieval and prediction-error feedback improves speculative tool calling accuracy. We are aiming to produce a framework that extends this approach by organizing prior experience around inferred end-goals, then using those goals to distinguish between plausible continuations of an observed workflow.</p>
+      <p>The hypothesis is that similar execution inputs can lead to different outcomes, and explicitly representing the intended outcome may improve the selection of relevant trajectories beyond what is achievable through contextual similarity alone, while leading to improved execution speed and task accuracy.</p>
+
+      <h3>Design overview</h3>
+      <p>We combine an outcome-conditioned adaptation of Salesforce's speculative predictor with a PASTE-based execution runtime. Our architecture would first infer the requested outcome and completion constraints from the query, application policy, and interaction history, maintaining multiple candidate objectives where the available evidence is ambiguous. These objectives would condition Salesforce-style retrieval and prediction comparing trajectories to our task repository, identifying relevant workflow patterns and candidate calls that resolve outstanding prerequisites.</p>
+      <p>The goal-oriented task repository would be initialized using Salesforce's APIGen-MT-5k, which contains 5,000 synthetic multi-turn executions across retail and airline tasks. The selected candidates would pass to a PASTE-based speculative execution scheduler, responsible for prioritizing and launching calls before the primary agent requests them. It would retain PASTE's admission criteria of resolved arguments, prediction confidence, expected latency benefit, and available resources.</p>
+      <p>The agent would then receive the inferred retrieved patterns before selecting its next action. This deliberately departs from the original frameworks' requirement to withhold speculative results until invocation matching, allowing observations to improve decisions rather than only accelerate them. Subsequent observations would update the objective hypotheses, while consequential actions would remain subject to authorization.</p>
+
+      <h3>Evaluation</h3>
+      <p>We will evaluate prediction quality on &tau;&sup2;-bench and WebArena using fixed-execution replay, following Li et al., before measuring realized speedups through live execution. Primary outcomes would be task success, repeated-run reliability, and independently assessed constraint violations. Goal attainment would be evaluated against held-out task specifications. Additionally, we will compare tool execution latency against the base agent and PASTE.</p>
+    </article>
+
+    <footer>&copy; 2026 Mert Turna</footer>
+  </main>
+</body>
+</html>

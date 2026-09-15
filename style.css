@@ -43,6 +43,31 @@ a.plain {
   margin-bottom: 0.6rem;
 }
 
+.muted {
+  color: #666;
+}
+
+article h2 {
+  font-size: 1.05rem;
+  font-weight: bold;
+  margin: 2rem 0 1rem;
+}
+
+article h3 {
+  font-size: 1rem;
+  font-weight: normal;
+  font-style: italic;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.tag {
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: #666;
+  margin-left: 0.5rem;
+  white-space: nowrap;
+}
+
 .links a {
   margin-right: 1.25rem;
 }
