@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>POMDP as a Proxy for Humans Making Life Decisions — Mert Turna</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="article">
+    <p class="crumbs"><a href="/">Mert Turna</a> / <a href="/projects">Projects</a></p>
+
+    <h1>POMDP as a Proxy for Humans Making Life Decisions</h1>
+    <p class="muted">How partially observable Markov decision processes are a fitting system to understand and model human behavior. Writing, 2026.</p>
+
+    <h2>1. Humans are complex, so are their environments</h2>
+    <p>Theoretically, this should create tremendous possibilities, but people can moderately be described as a product of their environment. In a way, human biology and society<sup><a href="#fn1" id="ref1">1</a></sup> force us to strongly react to the aspects of our environment that relate to our odds of survival, either directly (food, shelter) or indirectly (status).</p>
+
+    <h2>2. Why humans as state machines make partial sense</h2>
+    <p>The main drivers of human behavior look something like:</p>
+    <ul>
+      <li><strong>Motivation:</strong> biological and social drivers.</li>
+      <li><strong>Energy:</strong> your battery, though not linear and not fully charged for every task.</li>
+      <li><strong>Personality:</strong> compass, morals, and innate neural pathways (nature and nurture).<sup><a href="#fn2" id="ref2">2</a></sup></li>
+      <li><strong>Past reinforcement per task:</strong> gets stronger the narrower the task is.<sup><a href="#fn3" id="ref3">3</a></sup></li>
+    </ul>
+    <p>Given such factors, if we know the current state and the potential next states, the next state becomes fairly predictable. If I am energized and want to take on a difficult task I am interested in, I do it. Same task when I am tired, I don't.</p>
+    <p>An MDP also adds <em>choice</em>, whereas a state machine makes it sound like humans are solely pushed around by their environment.</p>
+
+    <h2>3. Life pushes back: why a Markov decision process beats a state machine</h2>
+    <ul>
+      <li><strong>Probability:</strong> we don't know exactly what will happen, though we typically have an idea of the main possible outcomes.</li>
+      <li><strong>States:</strong> the set of conditions described above, and more.</li>
+      <li><strong>Action set:</strong> the paths we are considering from the current state.</li>
+      <li><strong>Rewards:</strong> the potential benefit (and punishment) from our actions.</li>
+    </ul>
+    <p>By expanding the analogy from state machine to MDP, we get a better diagram of a human proxy.</p>
+
+    <h2>4. Life also confuses: why a partially observable MDP is more accurate than an MDP</h2>
+    <p>You can't observe the exact details of the situation you are in. As a human you are always deciding in partial darkness:</p>
+    <ul>
+      <li>Other people's thoughts and motives.</li>
+      <li>Unknown facts about the world, other parties, ongoing developments.</li>
+      <li>So you develop guesses and correct them as you go, mostly subconsciously.</li>
+    </ul>
+    <p>We don't act on reality directly, but on what we take to be reality from our perception (loosely Kantian), and reconcile as we go. In a POMDP this is the <em>belief state</em>: you can't know your true state, but you maintain an estimate of it.</p>
+    <p>One interesting insight from Ilya Sutskever is that innate emotions are a useful heuristic for fast, accurate decisions in a system where we lack both self-knowledge and knowledge of the outside: "the value function of humans is modulated by emotions in some important way that's hardcoded by evolution and maybe that is important for people to be effective in the world." This may help explain how humans succeed in complex environments, while making the task of modeling them markedly harder.<sup><a href="#fn4" id="ref4">4</a></sup></p>
+    <p>A counterargument: in an MDP, mathematically, the only thing that matters for the next step is the current state; any past step is irrelevant. But the current state doesn't have to be a person dropped into a situation. It can just as well include how the person was shaped by their past, carrying the past within the person. I am of the opinion that we live in a hauntological<sup><a href="#fn5" id="ref5">5</a></sup> reality, where life is like a song in which the current note only makes sense in relation to what you just heard and what you expect to hear next.</p>
+
+    <h2>5. Why any of this matters</h2>
+    <p>We went from a state machine, which describes the broad state a human is in and what changes it, to MDPs, where we consider actions and their consequences, and arrived at POMDPs, where we introduce uncertainty about the current situation itself.</p>
+    <p>If we ever try to model human behavior in a given setting, this is a good place to start: a low-fidelity playground for figuring out which variables are worth including.</p>
+
+    <h2>Notes</h2>
+    <ol class="footnotes">
+      <li id="fn1">Values hardcoded in humans, like sharing and group survival, shape how society forms, which in turn shapes how humans develop in ways that are also hardcoded by biology. Shame, for instance, is a mechanism for staying in line with group morals to increase odds of survival. Biology dictates how we build societies and interact with them as individuals, which in turn feeds back into society. Perhaps many cross-cultural commonalities, like the concept of family, can be attributed to this. <a href="#ref1">&#8617;</a></li>
+      <li id="fn2">Extroversion, for example, is detectable in the womb by reaction to light. <a href="#ref2">&#8617;</a></li>
+      <li id="fn3">If you are learning a new card game and just learned that a move is "good", you are very likely to repeat it. The wider the environment variables, the less predictable and recallable this becomes. <a href="#ref3">&#8617;</a></li>
+      <li id="fn4">The patient who lost his emotional cortex could complete almost all tasks as before, but struggled with simple decisions like which socks to wear. <a href="#ref4">&#8617;</a></li>
+      <li id="fn5">Derrida on hauntology; also <a href="https://plato.stanford.edu/entries/consciousness-temporal/">temporal consciousness</a>. <a href="#ref5">&#8617;</a></li>
+    </ol>
+
+    <footer>&copy; 2026 Mert Turna</footer>
+  </main>
+</body>
+</html>
