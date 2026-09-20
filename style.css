@@ -135,3 +135,8 @@ footer {
   font-size: 0.8rem;
   letter-spacing: 0.03em;
 }
+
+a.home {
+  color: #0000ee;
+  text-decoration: underline;
+}
