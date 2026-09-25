@@ -140,3 +140,25 @@ a.home {
   color: #0000ee;
   text-decoration: underline;
 }
+
+.poem {
+  margin: 2.5rem 0;
+}
+
+.poem h2 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0 0 0.2rem;
+}
+
+.poem .muted {
+  margin-bottom: 1rem;
+}
+
+.poem pre {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.5;
+  white-space: pre;
+  margin: 0;
+}
