@@ -162,3 +162,7 @@ a.home {
   white-space: pre;
   margin: 0;
 }
+
+.poem pre.wrap {
+  white-space: pre-wrap;
+}
